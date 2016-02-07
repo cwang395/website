@@ -1,35 +1,12 @@
-# Simple Docker Container for Jekyll Work
+# Docker Container for Jekyll
+Docker Hub: <https://hub.docker.com/r/numascott/docker-whale/>
 
-Docker Hub: <https://registry.hub.docker.com/u/grahamc/jekyll/>
+Docker Pull Command
 
-Use example:
+    docker pull numascott/docker-whale
 
-```
-sudo docker run --rm -v "$PWD:/src" grahamc/jekyll build
-```
+###Usage:
 
-or for repeated calls:
+Navigate to within the jekyll webiste folder then run
 
-```
-alias jekyll='sudo docker run --rm -v "$PWD:/src" -p 4000:4000 grahamc/jekyll'
-jekyll build
-jekyll serve -H 0.0.0.0
-```
-
-run as a background daemon:
-```
-sudo docker run -d -v "$PWD:/src" -p 4000:4000 grahamc/jekyll serve -H 0.0.0.0
-```
-
-## Goodies
- - Supports pygments syntax highlighting
- - Supports Github Pages
- - Supports Jekyll Redirect From
- - Supports Kramdown
- - Supports RDiscount
- - Supports Rouge
-
-
-# License: Public Domain
-
-Do what you want!
+    docker run -d -v "$(pwd):/src" -p 4000:4000 numascott/jekyll serve
