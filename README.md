@@ -10,3 +10,5 @@ Docker Pull Command
 Navigate to within the jekyll webiste folder then run
 
     docker run -d -v "$(pwd):/src" -p 4000:4000 numascott/jekyll serve
+
+The jekyll site should be available at The jekyll site should be available at <http://192.168.99.100:4000>
