@@ -3,6 +3,7 @@ ORIGIN_REPO = "https://github.com/cwang395/website.git"
 
 desc "Build Jekyll site and copy files"
 task :build_gh_pages do
+  system "git merge master"
   system "jekyll build"
   if not File.exists? "../#{GH_PAGES_DIR}/"
     system "mkdir ../#{GH_PAGES_DIR}/"
